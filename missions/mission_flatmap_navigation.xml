@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Mission xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <About>
+        <Summary>Flatmap Navigation Mission</Summary>
+    </About>
+
+    <ServerSection>
+        <ServerInitialConditions>
+            <Time><StartTime>6000</StartTime></Time>
+            <Weather>clear</Weather>
+        </ServerInitialConditions>
+        <ServerHandlers>
+            <FlatWorldGenerator generatorString="3;7,2*3,2;12;decoration" />
+            <DrawingDecorator>
+                <DrawLine x1="0" y1="3" z1="0" x2="50" y2="3" z2="0" type="diamond_block" />
+            </DrawingDecorator>
+            <ServerQuitFromTimeUp timeLimitMs="30000" />
+            <ServerQuitWhenAnyAgentFinishes />
+        </ServerHandlers>
+    </ServerSection>
+
+    <AgentSection mode="Survival">
+        <Name>Dreamer</Name>
+        <AgentStart>
+            <Placement x="0" y="4" z="0" yaw="0" />
+        </AgentStart>
+        
+        <AgentHandlers>
+            <VideoProducer want_depth="false">
+                <Width>336</Width>
+                <Height>336</Height>
+            </VideoProducer>
+            <ContinuousMovementCommands turnSpeedDegs="180"/>
+            <RewardForTouchingBlockType>
+                <Block type="diamond_block" reward="20" />
+            </RewardForTouchingBlockType>
+            <RewardForSendingCommand reward="-1" />
+        </AgentHandlers>
+    </AgentSection>
+</Mission>

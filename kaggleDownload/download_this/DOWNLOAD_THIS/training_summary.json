@@ -1,0 +1,167 @@
+{
+  "training_info": {
+    "total_models_trained": 13,
+    "models_saved": 10,
+    "best_loss_achieved": 0.0009574055904522539,
+    "best_model": "BS64_LR0.001_adamw",
+    "best_model_epoch": 38
+  },
+  "model_rankings": [
+    {
+      "rank": 1,
+      "name": "BS64_LR0.001_adamw",
+      "val_loss": 0.0009574055904522539,
+      "epoch": 38,
+      "saved": true,
+      "hyperparameters": {
+        "batch_size": 64,
+        "learning_rate": 0.001,
+        "optimizer": "adamw"
+      }
+    },
+    {
+      "rank": 2,
+      "name": "BS64_LR0.001_adam",
+      "val_loss": 0.0009652691066730768,
+      "epoch": 40,
+      "saved": true,
+      "hyperparameters": {
+        "batch_size": 64,
+        "learning_rate": 0.001,
+        "optimizer": "adam"
+      }
+    },
+    {
+      "rank": 3,
+      "name": "BS64_LR0.0005_adam",
+      "val_loss": 0.000976373857120052,
+      "epoch": 40,
+      "saved": true,
+      "hyperparameters": {
+        "batch_size": 64,
+        "learning_rate": 0.0005,
+        "optimizer": "adam"
+      }
+    },
+    {
+      "rank": 4,
+      "name": "BS64_LR0.0005_adamw",
+      "val_loss": 0.0009803723182994872,
+      "epoch": 40,
+      "saved": true,
+      "hyperparameters": {
+        "batch_size": 64,
+        "learning_rate": 0.0005,
+        "optimizer": "adamw"
+      }
+    },
+    {
+      "rank": 5,
+      "name": "BS128_LR0.001_adam",
+      "val_loss": 0.0010034139454364777,
+      "epoch": 38,
+      "saved": true,
+      "hyperparameters": {
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "optimizer": "adam"
+      }
+    },
+    {
+      "rank": 6,
+      "name": "BS128_LR0.001_adamw",
+      "val_loss": 0.0010153662413358688,
+      "epoch": 39,
+      "saved": true,
+      "hyperparameters": {
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "optimizer": "adamw"
+      }
+    },
+    {
+      "rank": 7,
+      "name": "BS128_LR0.0005_adamw",
+      "val_loss": 0.001135624097660184,
+      "epoch": 40,
+      "saved": true,
+      "hyperparameters": {
+        "batch_size": 128,
+        "learning_rate": 0.0005,
+        "optimizer": "adamw"
+      }
+    },
+    {
+      "rank": 8,
+      "name": "BS128_LR0.0005_adam",
+      "val_loss": 0.0011397458100691439,
+      "epoch": 40,
+      "saved": true,
+      "hyperparameters": {
+        "batch_size": 128,
+        "learning_rate": 0.0005,
+        "optimizer": "adam"
+      }
+    },
+    {
+      "rank": 9,
+      "name": "BS64_LR0.0001_adamw",
+      "val_loss": 0.0013099514786154031,
+      "epoch": 40,
+      "saved": true,
+      "hyperparameters": {
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "optimizer": "adamw"
+      }
+    },
+    {
+      "rank": 10,
+      "name": "BS64_LR0.0001_adam",
+      "val_loss": 0.0013477518782019616,
+      "epoch": 40,
+      "saved": true,
+      "hyperparameters": {
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "optimizer": "adam"
+      }
+    },
+    {
+      "rank": 11,
+      "name": "BS128_LR0.0001_adam",
+      "val_loss": 0.0017101138783618807,
+      "epoch": 40,
+      "saved": false,
+      "hyperparameters": {
+        "batch_size": 128,
+        "learning_rate": 0.0001,
+        "optimizer": "adam"
+      }
+    },
+    {
+      "rank": 12,
+      "name": "BS128_LR0.0001_adamw",
+      "val_loss": 0.0017814779514446855,
+      "epoch": 38,
+      "saved": false,
+      "hyperparameters": {
+        "batch_size": 128,
+        "learning_rate": 0.0001,
+        "optimizer": "adamw"
+      }
+    },
+    {
+      "rank": 13,
+      "name": "BS64_LR0.001",
+      "val_loss": Infinity,
+      "epoch": 0,
+      "saved": false,
+      "hyperparameters": {
+        "batch_size": 64,
+        "learning_rate": 0.001,
+        "optimizer": "unknown"
+      }
+    }
+  ]
+}

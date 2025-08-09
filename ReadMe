@@ -1,0 +1,98 @@
+# Malmo Projekt Startanleitung
+
+Diese Anleitung fasst die notwendigen Schritte zusammen, um die Malmo/Minecraft-Umgebung zu starten und ein eigenes Python-Skript auszuführen.
+
+## Voraussetzungen
+
+1.  **Minecraft Java Edition** ist installiert.
+2.  Das **Malmo**-Paket ist heruntergeladen und entpackt (z.B. unter `~/Downloads/Malmo-0.37.0...`).
+3.  Die nötigen Python-Pakete sind installiert (`pip3 install future`).
+
+---
+
+## Startanleitung (Zwei-Terminal-Prozess)
+
+Du benötigst **zwei separate Terminalfenster**, um den Agenten zu starten. Eines für die Minecraft-Welt (den "Körper") und eines für dein Python-Skript (das "Gehirn").
+
+conda activate malmo_env
+
+### Terminal 1: Minecraft starten (Der "Körper" 🤖)
+
+1.  **Öffne ein neues Terminal.**
+
+2.  **Navigiere in den `Minecraft`-Ordner** deiner Malmo-Installation. Ersetze den Pfad durch deinen eigenen.
+    ```bash
+    # Passe den Pfad an den Ort an, an dem du Malmo entpackt hast
+    cd ~/Downloads/Malmo-0.37.0-Linux-Ubuntu-18.04-64bit_withBoost_Python3.6/Minecraft
+    ```
+
+3.  **Starte den Malmo-Client.**
+    ```bash
+    ./launchClient.sh
+    ```
+    > Ein Minecraft-Fenster öffnet sich und bleibt im Hauptmenü stehen. Das Terminal ist danach wieder frei.
+
+**WICHTIG:** Lass dieses Minecraft-Fenster die ganze Zeit im Hintergrund geöffnet!
+
+---
+
+### Terminal 2: Python-Agenten starten (Das "Gehirn" 🧠)
+
+1.  **Öffne ein ZWEITES, neues Terminal.**
+
+2.  **Navigiere in den `Python_Examples`-Ordner** deiner Malmo-Installation.
+    ```bash
+    # Passe den Pfad wieder an
+    cd ~/Downloads/Malmo-0.37.0-Linux-Ubuntu-18.04-64bit_withBoost_Python3.6/Python_Examples
+    ```
+
+3.  **Starte dein Python-Skript.** Ersetze `dein_agent.py` durch den Namen deines Skripts.
+    ```bash
+    MALMO_XSD_PATH=../Schemas python3 dein_agent.py
+    ```
+    > Jetzt sollte das Minecraft-Fenster aktiv werden und dein Agent die im Skript definierte Mission ausführen.
+
+---
+
+## Dein Arbeitsablauf
+
+1.  Erstelle und bearbeite deine Python-Skripte (z.B. `mein_agent.py`) direkt im `Python_Examples`-Ordner.
+2.  Erstelle oder bearbeite die Missions-`XML`-Dateien, um die Welten und Aufgaben zu definieren.
+3.  Folge dem Zwei-Terminal-Prozess oben, um deine Agenten zu testen.
+
+## Häufige Fehler
+
+* **`ModuleNotFoundError: No module named 'MalmoPython'`**
+    * **Ursache:** Du führst das Python-Skript vom falschen Ort aus.
+    * **Lösung:** Stelle sicher, dass du dich im `Python_Examples`-Ordner befindest, bevor du das Skript startest.
+
+* **`Please set the MALMO_XSD_PATH environment variable.`**
+    * **Ursache:** Die `MALMO_XSD_PATH`-Variable wurde nicht gesetzt.
+    * **Lösung:** Stelle sicher, dass du dein Skript mit `MALMO_XSD_PATH=../Schemas ...` am Anfang des Befehls startest.
+
+
+
+
+# 1. Starte Minecraft Clients
+./HelperSkripte/launch_multi_minecraft.sh
+
+# 2. Check ob sie laufen
+./HelperSkripte/check_clients.sh
+
+# 3. Starte paralleles Sammeln
+python parallel_collector.py
+
+# 4. Monitor Progress (neues Terminal)
+tail -f agent_*.log
+
+# 5. Nach Fertigstellung: Merge
+python merge_buffers.py
+
+# 6. Cleanup
+./HelperSkripte/stop_all_minecraft.sh
+
+
+Biome IDs
+https://minecraft.fandom.com/wiki/Biome/ID
+
+https://minecraft.fandom.com/wiki/Biome/IDs_before_1.13

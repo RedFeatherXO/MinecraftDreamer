@@ -1,0 +1,37 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.so
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Python virtual environments
+.venv/
+env/
+venv/
+
+# Logs
+*.log
+
+# Large data or model files
+*.hdf5
+*.h5
+*.pkl
+*.ckpt
+
+# Temporary or intermediate files
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# Ignore PDF tutorials (optional, remove if you want to keep them in git)
+examples/*.pdf
+
+# Ignore compiled binary files
+*.out
+*.o
+*.obj

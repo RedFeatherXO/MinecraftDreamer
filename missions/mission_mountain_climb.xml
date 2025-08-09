@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Mission xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <About>
+        <Summary>Mountain Climb</Summary>
+    </About>
+
+    <ServerSection>
+        <ServerInitialConditions>
+            <Time><StartTime>6000</StartTime></Time>
+            <Weather>clear</Weather>
+        </ServerInitialConditions>
+
+        <ServerHandlers>
+            <BiomeGenerator biome="34" />
+            <ServerQuitFromTimeUp timeLimitMs="30000" />
+            <ServerQuitWhenAnyAgentFinishes />
+        </ServerHandlers>
+    </ServerSection>
+
+    <AgentSection mode="Survival">
+        <Name>Dreamer</Name>
+        <AgentStart/>
+
+        <AgentHandlers>
+            <VideoProducer>
+                <Width>336</Width>
+                <Height>336</Height>
+            </VideoProducer>
+            <ContinuousMovementCommands turnSpeedDegs="180"/>
+            <RewardForSendingCommand reward="-1" />
+        </AgentHandlers>
+    </AgentSection>
+</Mission>
