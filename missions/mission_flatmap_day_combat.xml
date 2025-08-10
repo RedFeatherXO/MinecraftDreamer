@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Mission xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <About>
+        <Summary>Flatmap Night Combat</Summary>
+    </About>
+
+    <ServerSection>
+        <ServerInitialConditions>
+            <Time><StartTime>6000</StartTime></Time>
+            <Weather>clear</Weather>
+        </ServerInitialConditions>
+        <ServerHandlers>
+            <FlatWorldGenerator generatorString="3;7,2*3,2;4;biome_1,village,lake" />
+            <DrawingDecorator>
+                <DrawEntity x="10" y="4" z="10" type="Zombie" />
+                <DrawEntity x="-10" y="4" z="-10" type="Skeleton" />
+                <DrawEntity x="10" y="4" z="100" type="Zombie" />
+                <DrawEntity x="-120" y="4" z="-30" type="Skeleton" />
+                <DrawEntity x="30" y="4" z="100" type="Zombie" />
+                <DrawEntity x="-20" y="4" z="-10" type="Skeleton" />
+                <DrawEntity x="40" y="4" z="10" type="Zombie" />
+                <DrawEntity x="-100" y="4" z="-10" type="Skeleton" />
+            </DrawingDecorator>
+            <ServerQuitFromTimeUp timeLimitMs="30000" />
+            <ServerQuitWhenAnyAgentFinishes />
+        </ServerHandlers>
+    </ServerSection>
+
+    <AgentSection mode="Survival">
+        <Name>Dreamer</Name>
+        <AgentStart>
+            <Placement x="0" y="4" z="0" yaw="0" />
+            <Inventory>
+                <InventoryItem slot="0" type="diamond_sword" />
+            </Inventory>
+        </AgentStart>
+        <AgentHandlers>
+            <VideoProducer>
+                <Width>336</Width>
+                <Height>336</Height>
+            </VideoProducer>
+            <ContinuousMovementCommands turnSpeedDegs="180"/>
+            <RewardForDamagingEntity>
+                <Mob type="Zombie" reward="50" />
+                <Mob type="Skeleton" reward="50" />
+            </RewardForDamagingEntity>
+        </AgentHandlers>
+    </AgentSection>
+</Mission>

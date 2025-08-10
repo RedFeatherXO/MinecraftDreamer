@@ -1,0 +1,71 @@
+{
+  "training_info": {
+    "total_models_trained": 5,
+    "models_saved": 3,
+    "best_loss_achieved": 299.3612278529576,
+    "best_model": "BS512_LR0.0005_LD256_adamw",
+    "best_model_epoch": 48
+  },
+  "model_rankings": [
+    {
+      "rank": 1,
+      "name": "BS512_LR0.0005_LD256_adamw",
+      "val_loss": 299.3612278529576,
+      "epoch": 48,
+      "saved": true,
+      "hyperparameters": {
+        "batch_size": 512,
+        "learning_rate": 0.0005,
+        "optimizer": "LD256"
+      }
+    },
+    {
+      "rank": 2,
+      "name": "BS512_LR0.0001_LD512_adamw",
+      "val_loss": 303.39646693638394,
+      "epoch": 46,
+      "saved": true,
+      "hyperparameters": {
+        "batch_size": 512,
+        "learning_rate": 0.0001,
+        "optimizer": "LD512"
+      }
+    },
+    {
+      "rank": 3,
+      "name": "BS512_LR0.0005_LD512_adamw",
+      "val_loss": 303.6766052246094,
+      "epoch": 49,
+      "saved": true,
+      "hyperparameters": {
+        "batch_size": 512,
+        "learning_rate": 0.0005,
+        "optimizer": "LD512"
+      }
+    },
+    {
+      "rank": 4,
+      "name": "BS512_LR0.0005_LD1024_adamw",
+      "val_loss": 307.6697082519531,
+      "epoch": 46,
+      "saved": false,
+      "hyperparameters": {
+        "batch_size": 512,
+        "learning_rate": 0.0005,
+        "optimizer": "LD1024"
+      }
+    },
+    {
+      "rank": 5,
+      "name": "BS512_LR0.0001_LD1024_adamw",
+      "val_loss": 353.1808602469308,
+      "epoch": 25,
+      "saved": false,
+      "hyperparameters": {
+        "batch_size": 512,
+        "learning_rate": 0.0001,
+        "optimizer": "LD1024"
+      }
+    }
+  ]
+}

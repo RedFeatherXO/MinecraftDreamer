@@ -17,7 +17,7 @@ from utils import Config
 
 # --- NEU: Konfiguration ---
 # Passe diesen Pfad zu deiner heruntergeladenen Modelldatei an
-PRETRAINED_MODEL_PATH = "kaggleDownload/kaggle_top10_models/models/rank2_loss0.000965_BS64_LR0.001_adam.pth"
+PRETRAINED_MODEL_PATH = "kaggle_top3_models/models/rank1_loss299.361228_BS512_LR0.0005_LD256_adamw.pth"
 
 # --- NEU: Visualisierungs-Funktion ---
 # Diese Funktion erstellt und aktualisiert das Inferenz-Fenster
@@ -52,6 +52,11 @@ def main():
     # Setup (wie in main.py)
     logging.basicConfig(level=logging.INFO)
     config = Config()
+    # ==============================================================================
+    # NEU: Setze den latent_dim in der Config, passend zum Modellnamen
+    # Der Modellname enthält "LD256", also setzen wir LATENT_DIM auf 256
+    config.LATENT_DIM = 256
+    # ==============================================================================
     
     # Mission XML laden
     try:
@@ -93,7 +98,7 @@ def main():
                 with torch.no_grad():
                     # Das Modell braucht einen Batch-Dimension (unsqueeze)
                     input_tensor = next_obs.unsqueeze(0).to(device)
-                    reconstructed_obs = agent.world_model(input_tensor)
+                    reconstructed_obs, _, _ = agent.world_model(input_tensor)
                 
                 visualize_inference(next_obs, reconstructed_obs)
                 obs = next_obs

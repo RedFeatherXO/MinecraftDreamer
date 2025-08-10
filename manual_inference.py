@@ -18,7 +18,7 @@ from utils import Config
 
 # --- Konfiguration ---
 # Passe diesen Pfad zu deiner besten heruntergeladenen Modelldatei an
-PRETRAINED_MODEL_PATH = "kaggleDownload/kaggle_top10_models/models/rank1_loss0.000957_BS64_LR0.001_adamw.pth"
+PRETRAINED_MODEL_PATH = "kaggle_top3_models/models/rank1_loss299.361228_BS512_LR0.0005_LD256_adamw.pth"
 
 # --- NEU: Controller-Klasse für manuelle Steuerung ---
 class KeyboardController:
@@ -93,8 +93,13 @@ def visualize_inference(original_obs, reconstructed_obs):
 def main():
     logging.basicConfig(level=logging.INFO)
     config = Config()
+    # ==============================================================================
+    # NEU: Setze den latent_dim in der Config, passend zum Modellnamen
+    # Der Modellname enthält "LD256", also setzen wir LATENT_DIM auf 256
+    config.LATENT_DIM = 256
+    # ==============================================================================
     
-    with open("/home/meik/Downloads/Malmo-0.37.0-Linux-Ubuntu-18.04-64bit_withBoost_Python3.6/Python_Examples/mission_interference.xml", "r") as f:
+    with open("/home/meik/Downloads/Malmo-0.37.0-Linux-Ubuntu-18.04-64bit_withBoost_Python3.6/Python_Examples/mission.xml", "r") as f:
         mission_xml = f.read()
 
     env = MalmoEnvironment(config, mission_xml)
@@ -119,7 +124,7 @@ def main():
             if next_obs is not None:
                 with torch.no_grad():
                     input_tensor = next_obs.unsqueeze(0).to(device)
-                    reconstructed_obs = agent.world_model(input_tensor)
+                    reconstructed_obs, _, _ = agent.world_model(input_tensor)
                 
                 visualize_inference(next_obs, reconstructed_obs)
                 obs = next_obs

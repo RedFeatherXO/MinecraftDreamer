@@ -88,6 +88,7 @@ if __name__ == "__main__":
         "missions/mission_plains.xml",
         "missions/mission_mountain_climb.xml",
         "missions/mission_ocean_swim.xml",
+        "missions/mission_flatmap_day_combat.xml",
     ]
 
     # --- Agent einmalig erstellen (unverändert) ---
@@ -113,7 +114,7 @@ if __name__ == "__main__":
     time.sleep(3)
 
     # --- Haupt-Schleife für die Episoden ---
-    total_episodes = getattr(config, "NUM_EPISODES", 10)
+    total_episodes = getattr(config, "NUM_EPISODES", 250)
     episode_counter = 0
 
     while episode_counter < total_episodes:

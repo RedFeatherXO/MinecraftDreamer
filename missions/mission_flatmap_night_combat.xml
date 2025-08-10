@@ -10,7 +10,7 @@
             <Weather>clear</Weather>
         </ServerInitialConditions>
         <ServerHandlers>
-            <FlatWorldGenerator generatorString="3;7,2*3,2;4;biome_1,village,decoration,lake" />
+            <FlatWorldGenerator generatorString="3;7,2*3,2;4;biome_1,village,lake" />
             <DrawingDecorator>
                 <DrawEntity x="10" y="4" z="10" type="Zombie" />
                 <DrawEntity x="-10" y="4" z="-10" type="Skeleton" />

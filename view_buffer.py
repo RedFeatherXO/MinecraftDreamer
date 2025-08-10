@@ -4,7 +4,7 @@ import h5py
 import numpy as np
 import matplotlib.pyplot as plt
 
-with h5py.File('replay_buffer.hdf5', 'r') as f:
+with h5py.File('/home/meik/Downloads/Malmo-0.37.0-Linux-Ubuntu-18.04-64bit_withBoost_Python3.6/Python_Examples/replay_runs/run_p10000_20250809_234417/replay_buffer.hdf5', 'r') as f:
     size = f.attrs['size']
     print(f"🎉 Erfolgreich gespeichert: {size} samples")
     print(f"📊 Stats:")
