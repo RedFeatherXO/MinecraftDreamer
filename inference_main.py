@@ -17,7 +17,7 @@ from utils import Config
 
 # --- NEU: Konfiguration ---
 # Passe diesen Pfad zu deiner heruntergeladenen Modelldatei an
-PRETRAINED_MODEL_PATH = "kaggle_top3_models/models/rank1_loss299.361228_BS512_LR0.0005_LD256_adamw.pth"
+PRETRAINED_MODEL_PATH = "kaggle_top1_models/models/rank1_loss351.414028_BS512_LR0.0001_LD512_adamw.pth"
 
 # --- NEU: Visualisierungs-Funktion ---
 # Diese Funktion erstellt und aktualisiert das Inferenz-Fenster
@@ -94,7 +94,6 @@ def main():
             step_count += 1
             
             if next_obs is not None:
-                # --- NEU: Führe Inferenz durch und visualisiere das Ergebnis ---
                 with torch.no_grad():
                     # Das Modell braucht einen Batch-Dimension (unsqueeze)
                     input_tensor = next_obs.unsqueeze(0).to(device)

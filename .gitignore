@@ -21,6 +21,8 @@ venv/
 *.h5
 *.pkl
 *.ckpt
+*.pt
+*.pth
 
 # Temporary or intermediate files
 *.tmp

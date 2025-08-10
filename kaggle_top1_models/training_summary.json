@@ -1,0 +1,23 @@
+{
+  "training_info": {
+    "total_models_trained": 1,
+    "models_saved": 1,
+    "best_loss_achieved": 351.41402762276783,
+    "best_model": "BS512_LR0.0001_LD512_adamw",
+    "best_model_epoch": 29
+  },
+  "model_rankings": [
+    {
+      "rank": 1,
+      "name": "BS512_LR0.0001_LD512_adamw",
+      "val_loss": 351.41402762276783,
+      "epoch": 29,
+      "saved": true,
+      "hyperparameters": {
+        "batch_size": 512,
+        "learning_rate": 0.0001,
+        "optimizer": "LD512"
+      }
+    }
+  ]
+}
